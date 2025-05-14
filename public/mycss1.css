@@ -1,0 +1,85 @@
+body {
+  font-family: "Inter";
+  background-color: lightblue;
+  color: blue;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+p {
+  text-decoration: solid;
+}
+
+a:link {
+  color: rgb(131, 96, 8);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(8, 131, 57);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:visited {
+  color: rgb(131, 96, 8);
+  text-decoration: none;
+}
+
+.kalimatpembuka {
+  font-size: x-large;
+  border: green 1px solid;
+  border-radius: 15px;
+}
+
+input {
+  margin-top: 5px;
+  width: 500px;
+  height: 30px;
+  border: 1px transparent solid;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.containers {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 500px;
+  margin-top: 5px;
+  height: 30px;
+  border: 1px transparent solid;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: height 1s ease;
+}
+
+textarea:focus {
+  height: 150px;
+}
+
+select {
+  margin-top: 5px;
+  width: 500px;
+  height: 30px;
+  border: 1px transparent solid;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.lampu {
+  margin-top: 50px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 100%;
+  background-color: red;
+  transition: background-color 1s ease;
+}
+
+.lampu:hover {
+  background-color: green;
+}

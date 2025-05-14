@@ -22,7 +22,7 @@ use App\Http\Controllers\ClockController;
 //Route::get('/', function () {});
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend');
 });
 
 Route::get('/selamat', function () {
@@ -48,5 +48,33 @@ Route::get('blog', function () {
 Route::get('clock', [ClockController::class, 'index']);
 //Route::get('clock', 'ClockController@index');
 
+//Tambahan dari week 1
+Route::get('week1', function () {
+    return view('week1');
+});
+
+Route::get('week2', function () {
+    return view('week2');
+});
+
+Route::get('bootstrap1', function () {
+    return view('bootstrap1');
+});
+
+Route::get('js1', function () {
+    return view('js1');
+});
+
+Route::get('js2', function () {
+    return view('js2');
+});
+
+Route::get('linktree', function () {
+    return view('linktree');
+});
+
+Route::get('frontend', function () {
+    return view('frontend');
+});
 
 
