@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClockController;
+use App\Http\Controllers\BiodataController;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\BlogController;
 //kalau di java pakai import
 
 /*
@@ -78,3 +81,15 @@ Route::get('frontend', function () {
 });
 
 
+//biodata
+Route::get('biodata', [BiodataController::class, 'index']);
+
+//pegawai
+Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
+Route::get('/formulir', [PegawaiController::class, 'formulir']); //Redirect ke halaman formulir
+Route::post('/formulir/proses', [PegawaiController::class, 'proses']); //Proses data formulir
+
+//blog
+Route::get('/blog', [BlogController::class, 'home']);
+Route::get('/blog/tentang', [BlogController::class, 'tentang']);
+Route::get('/blog/kontak', [BlogController::class, 'kontak']);
