@@ -98,6 +98,13 @@
         >
           <p class="m-2">linktree</p>
         </a>
+        <a
+          href="pegawai"
+          class="rounded-lg container d-flex justify-content-center align-items-center p-3 mt-4 animate_link bg_link"
+          style="min-height: 60px; max-width: 600px"
+        >
+          <p class="m-2">aplikasi pegawai</p>
+        </a>
       </div>
     </div>
   </body>
