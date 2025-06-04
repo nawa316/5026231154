@@ -9,9 +9,13 @@ class PegawaiDBController extends Controller
 {
     public function index()
     {
-    	// mengambil data dari table pegawai
-    	$pegawai = DB::table('pegawai')->get();
- 
+    	// mengambil semua data dari table pegawai
+    	//$pegawai = DB::table('pegawai')->get();
+
+      // Menggunakan query builder untuk mengambil data pegawai dengan pagination
+    	// Menggunakan paginate untuk membatasi jumlah data yang ditampilkan per halaman      
+      $pegawai = DB::table('pegawai')->paginate(10);
+
     	// mengirim data pegawai ke view index
     	return view('pegawai/index',['pegawai' => $pegawai]);
  
@@ -24,10 +28,22 @@ class PegawaiDBController extends Controller
 	return view('pegawai/tambah'); 
     }
 
-    
+    // public function proses(Request $request)
+    // {
+    //     $this->validate($request,[
+    //        'nama' => 'required|min:5|max:20',
+    //        'pekerjaan' => 'required',
+    //        'usia' => 'required|numeric'
+    //     ]);
+ 
+    //     return view('proses',['data' => $request]);
+    // }
+
+
     // method untuk insert data ke table pegawai
     public function store(Request $request)
     {
+      
         // insert data ke table pegawai
         DB::table('pegawai')->insert([
             'pegawai_nama' => $request->nama,
@@ -42,12 +58,11 @@ class PegawaiDBController extends Controller
     public function edit($id)
     {
       // mengambil data pegawai berdasarkan id yang dipilih
-      $pegawai = DB::table('pegawai')->where('pegawai_id',$id)->get();
+      $pegawai = DB::table('pegawai')
+        ->where('pegawai_id',$id) // khusus operator =
+        ->get();
       // passing data pegawai yang didapat ke view edit.blade.php
       return view('pegawai/edit',['pegawai' => $pegawai]);
-    
-
-      
     }
 
     // update data pegawai
@@ -72,4 +87,19 @@ class PegawaiDBController extends Controller
       // alihkan halaman ke halaman pegawai
       return redirect('/pegawai');
     }
+
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+ 
+    		// mengambil data dari table pegawai sesuai pencarian data
+		$pegawai = DB::table('pegawai')
+		->where('pegawai_nama','like',"%".$cari."%")
+		->paginate();
+ 
+    		// mengirim data pegawai ke view index
+		return view('pegawai/index',['pegawai' => $pegawai]);
+ 
+	}
 } 

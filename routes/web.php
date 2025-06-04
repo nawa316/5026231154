@@ -25,7 +25,10 @@ use App\Http\Controllers\PegawaiDBController;
 //Kalau di php pakai ::
 //Route::get('/', function () {});
 
-Route::get('/', function () {
+Route::get('/',[PegawaiDBController::class, 'index']);
+
+
+Route::get('/frontend', function () {
     return view('frontend');
 });
 
@@ -102,3 +105,4 @@ Route::post('/pegawai/store', [PegawaiDBController::class, 'store']);
 Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit']);
 Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
+Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
