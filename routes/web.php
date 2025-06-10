@@ -6,6 +6,7 @@ use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\VgaController;
 //kalau di java pakai import
 
 /*
@@ -106,3 +107,13 @@ Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit']);
 Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
+
+// VGA CRUD
+Route::get('/vga', [VgaController::class, 'index']);
+Route::get('/vga/detail/{id}', [VgaController::class, 'show']);
+Route::get('/vga/create', [VgaController::class, 'create']);
+Route::post('/vga/store', [VgaController::class, 'store']);
+Route::get('/vga/edit/{id}', [VgaController::class, 'edit']);
+Route::post('/vga/update', [VgaController::class, 'update']);
+Route::get('/vga/delete/{id}', [VgaController::class, 'delete']);
+Route::get('/vga/search', [VgaController::class, 'search']);

@@ -21,7 +21,7 @@
                             @endif
  
                             <br/>
-                             <!-- form validasi -->
+                            <!-- form validasi -->
                             <form action="/proses" method="post">
                                 {{ csrf_field() }}
  
