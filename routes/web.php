@@ -9,6 +9,7 @@ use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\VgaController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PageCounterController;
+use App\Http\Controllers\KeranjangBelanjaController;
 //kalau di java pakai import
 
 /*
@@ -135,3 +136,9 @@ Route::get('/employee/search', [EmployeeController::class, 'search']);
 Route::get('/pagecounter', [PageCounterController::class, 'index']);
 Route::get('/pagecounter/page{id}', [PageCounterController::class, 'show']);
 
+// Keranjang Belanja
+Route::get('/keranjangbelanja', [KeranjangBelanjaController::class,'index']);
+Route::get('/keranjangbelanja/tambah', [KeranjangBelanjaController::class,'tambah']);
+Route::post('/keranjangbelanja/store', [KeranjangBelanjaController::class,'store']);
+Route::post('/keranjangbelanja/update', [KeranjangBelanjaController::class,'update']);
+Route::get('/keranjangbelanja/hapus/{id}',[KeranjangBelanjaController::class,'hapus']);
