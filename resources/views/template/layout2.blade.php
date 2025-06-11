@@ -297,9 +297,9 @@
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">All Links</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li><a href="/employee">Latihan 1</a></li>
-                        <li><a href="/product">Latihan 2</a></li>
-                        <li><a href="#">Latihan 3</a></li>
+                        <li><a href="/employee">Latihan 1: Cowok NRP Genap</a></li>
+                        <li><a href="/pagecounter">Latihan 2: Cowok NRP Ganjil</a></li>
+                        <li><a href="/">Latihan 3</a></li>
                     </ul>
                 </li>
             </ul>

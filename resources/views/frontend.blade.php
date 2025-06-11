@@ -94,6 +94,11 @@
                 style="min-height: 60px; max-width: 600px">
                 <p class="m-2">aplikasi karyawan</p>
             </a>
+            <a href="pagecounter"
+                class="rounded-lg container d-flex justify-content-center align-items-center p-3 mt-4 animate_link bg_link"
+                style="min-height: 60px; max-width: 600px">
+                <p class="m-2">aplikasi page counter</p>
+            </a>
         </div>
     </div>
 </body>

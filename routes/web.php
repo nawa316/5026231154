@@ -8,6 +8,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\VgaController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\PageCounterController;
 //kalau di java pakai import
 
 /*
@@ -129,3 +130,8 @@ Route::get('/employee/edit/{id}', [EmployeeController::class, 'edit']);
 Route::post('/employee/update', [EmployeeController::class, 'update']);
 Route::get('/employee/delete/{id}', [EmployeeController::class, 'destroy']);
 Route::get('/employee/search', [EmployeeController::class, 'search']);
+
+// Page Counter
+Route::get('/pagecounter', [PageCounterController::class, 'index']);
+Route::get('/pagecounter/page{id}', [PageCounterController::class, 'show']);
+
