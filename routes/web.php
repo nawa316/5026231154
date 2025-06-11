@@ -7,10 +7,11 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\VgaController;
+use App\Http\Controllers\EmployeeController;
 //kalau di java pakai import
 
 /*
-|--------------------------------------------------------------------------
+|-------------------------------------------  -------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -26,7 +27,9 @@ use App\Http\Controllers\VgaController;
 //Kalau di php pakai ::
 //Route::get('/', function () {});
 
-Route::get('/',[PegawaiDBController::class, 'index']);
+Route::get('/', function () {
+    return view('frontend');
+});
 
 
 Route::get('/frontend', function () {
@@ -117,3 +120,12 @@ Route::get('/vga/edit/{id}', [VgaController::class, 'edit']);
 Route::post('/vga/update', [VgaController::class, 'update']);
 Route::get('/vga/delete/{id}', [VgaController::class, 'delete']);
 Route::get('/vga/search', [VgaController::class, 'search']);
+
+// Employee CRUD
+Route::get('/employee', [EmployeeController::class, 'index']);
+Route::get('/employee/create', [EmployeeController::class, 'create']);
+Route::post('/employee/store', [EmployeeController::class, 'store']);
+Route::get('/employee/edit/{id}', [EmployeeController::class, 'edit']);
+Route::post('/employee/update', [EmployeeController::class, 'update']);
+Route::get('/employee/delete/{id}', [EmployeeController::class, 'destroy']);
+Route::get('/employee/search', [EmployeeController::class, 'search']);
